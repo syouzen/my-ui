@@ -1,0 +1,63 @@
+/* Accordion.module.css */
+
+.accordionItem {
+  font-size: 0.875rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.accordionTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: #f9fafb;
+  transition: background-color 0.2s;
+}
+
+.accordionTrigger[data-state="open"] svg {
+  transform: rotate(-180deg);
+}
+
+.accordionTriggerActive {
+  background-color: #f3f4f6;
+}
+
+.iconRotated {
+  height: 1rem;
+  width: 1rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+.accordionContent {
+  overflow: hidden;
+  padding: 12px;
+}
+
+.accordionContent[data-state="open"] {
+  animation: slideDown 0.2s forwards;
+}
+
+.accordionContent[data-state="closed"] {
+  animation: slideUp 0.2s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    max-height: 100px;
+  }
+  to {
+    max-height: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 100px;
+  }
+}
